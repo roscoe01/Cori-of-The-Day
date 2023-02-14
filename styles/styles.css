@@ -129,14 +129,12 @@ body {
   height: 900px;
   padding: 15px;
   transform: translate(-50%, -50%);
-  -webkit-animation: unroll 1.75s linear forwards;
-          animation: unroll 1.75s linear forwards;
+  animation: unroll 1.75s linear forwards;
 }
 .pergamino-abierto .imagenCarta {
   position: absolute;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   width: 800px;
   pointer-events: none;
