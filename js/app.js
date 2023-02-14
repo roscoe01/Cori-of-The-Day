@@ -1,11 +1,9 @@
 
-
 const botonCori = document.getElementById('coriButton');
 const tarjeta = document.getElementById("tarjeta");
 let audio = document.getElementById("audio-fondo");
-
-
-
+audio.volume = 0.1;
+audio.play();
 
 
 let coris;
@@ -83,8 +81,7 @@ function randomCori(){
 }
 
 botonCori.addEventListener("click", () => randomCori());
-audio.volume = 0.1;
-audio.play();
+
 
 function canExecute() {
   // Obtener la fecha y hora de la última ejecución desde localStorage
