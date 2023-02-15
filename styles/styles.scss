@@ -118,6 +118,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .carta {
   background-color: #9f8461;
@@ -139,12 +140,13 @@ body {
   }
 }
 
+
 .fondoCarta {
   background-image: url("../assets/fondoCarta.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .pergamino-abierto {
@@ -152,10 +154,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 615px;
-  height: 900px;
-  padding: 15px;
+  height: 800px;
+  padding: 50px;
 
-  transform: translate(-50%, -50%);
+
   animation: unroll 1.75s linear forwards;
 
   .imagenCarta {
@@ -184,48 +186,3 @@ body {
   }
 }
 
-.rutaPergamino {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-
-  height: 75px;
-  width: 75px;
-
-  background-image: url("../assets/cartaLink.png");
-  background-position: center;
-  background-size: cover;
-
-  transition: all ease-in-out 200ms;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-}
-
-.seguridadBoton {
-  width: 100px;
-  height: 100px;
-  align-self: center;
-
-  position: absolute;
-
-  background-color: red;
-
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  box-shadow: 0px 0px 10px black;
-
-  transition: all ease-in-out 200ms;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  .fa-lock {
-    font-size: 40px;
-    color: white;
-  }
-}
