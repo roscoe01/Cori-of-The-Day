@@ -1,45 +1,42 @@
-const botonCori = document.getElementById('coriButton');
+import { coris } from "./data.js";
+
+const botonCori = document.getElementById("coriButton");
 const tarjeta = document.getElementById("tarjeta");
 
-let coris;
-function randomCori(){
+function randomCori() {
   const maxUsesPerDay = 3;
   const storageKey = "coriUses";
-  const today = new Date().toISOString().split('T')[0];
-  const storageLastDate = localStorage.getItem('coriLastDate');
+  const today = new Date().toISOString().split("T")[0];
+  const storageLastDate = localStorage.getItem("coriLastDate");
 
   if (storageLastDate !== today) {
-    localStorage.setItem('coriLastDate', today);
-    localStorage.setItem(storageKey, '0');
+    localStorage.setItem("coriLastDate", today);
+    localStorage.setItem(storageKey, "0");
   }
 
   let coriUses = parseInt(localStorage.getItem(storageKey));
 
   if (coriUses >= maxUsesPerDay) {
     Swal.fire({
-      title: 'Hey!',
-      text: 'Cori se cansó por hoy, probá mañana seguro tiene ganas de seguir jugando',
-      imageUrl: '/assets/coriDescanso.jpg',
+      title: "Hey!",
+      text: "Cori se cansó por hoy, probá mañana seguro tiene ganas de seguir jugando",
+      imageUrl: "../assets/coriDescanso.jpg",
       imageWidth: 600,
       imageHeight: 400,
-      imageAlt: 'Cori Descanso',
+      imageAlt: "Cori Descanso",
       showClass: {
-        popup: 'animate__animated animate__bounceIn'
-      }
-
-    })
+        popup: "animate__animated animate__bounceIn",
+      },
+    });
     return;
   }
 
-
   if (canExecute()) {
-
-  fetch("/data/coris.json").then(res => res.json()).then(result => {
     botonCori.style.display = "none";
 
     // Generar la tarjeta con la información
-    let randomIndex = Math.floor(Math.random() * result.coris.length);
-    let cori = result.coris[randomIndex];
+    let randomIndex = Math.floor(Math.random() * coris.length);
+    let cori = coris[randomIndex];
 
     tarjeta.innerHTML = `
       <div class="tarjeta-adelante">
@@ -63,22 +60,15 @@ function randomCori(){
           </div>   
       </div>
 
-    `; 
+    `;
     tarjeta.style.display = "block";
     tarjeta.classList.add("animate-in");
 
     localStorage.setItem(storageKey, (coriUses + 1).toString());
-    
-   
-  })
-
   }
 }
 
 botonCori.addEventListener("click", () => randomCori());
-
-
-
 
 function canExecute() {
   // Obtener la fecha y hora de la última ejecución desde localStorage
