@@ -20,7 +20,7 @@ function randomCori() {
     Swal.fire({
       title: "Hey!",
       text: "Cori se cansó por hoy, probá mañana seguro tiene ganas de seguir jugando",
-      imageUrl: "../assets/coriDescanso.jpg",
+      imageUrl: "./assets/coriDescanso.jpg",
       imageWidth: 600,
       imageHeight: 400,
       imageAlt: "Cori Descanso",
