@@ -50,7 +50,7 @@
         { 
             "id": 9, 
             "nombre": "Cori Lengüita", 
-            "descripcion": "loremloremlorem", 
+            "descripcion": ":P", 
             "img": "/assets/img/coriLenguita.jpg"
         },
         { 
@@ -74,7 +74,7 @@
         { 
             "id": 13, 
             "nombre": "Cori Gamer", 
-            "descripcion": "loremloremlorem", 
+            "descripcion": "Cori esta lista para ponerse a jugar al Formula 1 durante toda la tarde.", 
             "img": "/assets/img/coriGamer.jpg"
         },
         { 
